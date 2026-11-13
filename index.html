@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aashray Doshi | Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <img class="profile-photo" id="photo" src="images/photo.png" alt="">
+    <h1 id="name"></h1>
+    <p class="tagline" id="tagline"></p>
+    <nav>
+      <a href="#summary">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#ventures">Ventures</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#hobbies">Hobbies</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="summary" class="card">
+      <h2>Summary</h2>
+      <p id="summary-text"></p>
+    </section>
+
+    <section id="experience" class="card">
+      <h2>Experience</h2>
+      <div id="experience-list"></div>
+    </section>
+
+    <section id="ventures" class="card">
+      <h2>Ventures and Projects</h2>
+      <div class="project-grid" id="ventures-list"></div>
+    </section>
+
+    <section id="education" class="card">
+      <h2>Education</h2>
+      <div id="education-list"></div>
+    </section>
+
+    <section id="skills" class="card">
+      <h2>Skills</h2>
+      <table>
+        <thead><tr><th>Skill</th><th>Where I used it</th></tr></thead>
+        <tbody id="skills-list"></tbody>
+      </table>
+    </section>
+
+    <section id="hobbies" class="card">
+      <h2>Hobbies and Extracurriculars</h2>
+      <ul class="tags" id="hobbies-list"></ul>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <h2>Let's connect</h2>
+    <div id="contact-list"></div>
+    <p class="copyright" id="copyright"></p>
+  </footer>
+
+  <script src="content.js"></script>
+  <script>
+    const esc = (s) => s;
+
+    document.title = resume.name + " | Resume";
+    document.getElementById("photo").alt = "Portrait of " + resume.name;
+    document.getElementById("name").textContent = resume.name;
+    document.getElementById("tagline").textContent = resume.tagline;
+    document.getElementById("summary-text").textContent = resume.summary;
+
+    document.getElementById("experience-list").innerHTML = resume.experience.map(e => `
+      <article>
+        <h3>${e.title}</h3>
+        <p class="meta">${[e.org, e.dates].filter(Boolean).join(" | ")}</p>
+        ${e.points.length ? "<ul>" + e.points.map(p => `<li>${p}</li>`).join("") + "</ul>" : ""}
+      </article>`).join("");
+
+    document.getElementById("ventures-list").innerHTML = resume.ventures.map(v => `
+      <article>
+        <h3>${v.title}</h3>
+        <p class="meta">${v.meta}</p>
+        <p>${v.text}</p>
+      </article>`).join("");
+
+    document.getElementById("education-list").innerHTML = resume.education.map(e => `
+      <article>
+        <h3>${e.title}</h3>
+        ${e.org ? `<p class="meta">${e.org}</p>` : ""}
+        ${e.details.length ? "<ul>" + e.details.map(d => `<li>${d}</li>`).join("") + "</ul>" : ""}
+      </article>`).join("");
+
+    document.getElementById("skills-list").innerHTML = resume.skills.map(s => `
+      <tr><td>${s.skill}</td><td>${s.where}</td></tr>`).join("");
+
+    document.getElementById("hobbies-list").innerHTML = resume.hobbies.map(h => `<li>${h}</li>`).join("");
+
+    document.getElementById("contact-list").innerHTML =
+      resume.contact.emails.map(e => `<p><a href="mailto:${e}">${e}</a></p>`).join("") +
+      `<p><a href="tel:${resume.contact.phone}">${resume.contact.phoneDisplay}</a></p>` +
+      `<p><a href="https://instagram.com/${resume.contact.instagram}" target="_blank" rel="noopener">Instagram: @${resume.contact.instagram}</a></p>`;
+
+    document.getElementById("copyright").textContent = "© " + new Date().getFullYear() + " " + resume.name;
+  </script>
+
+</body>
+</html>

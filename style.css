@@ -1,0 +1,259 @@
+/* ---------- Palette (Subtle Dark, Black, White & Rich Classic Theme) ---------- */
+:root {
+  --bg-dark: #0f0f11;         /* Deep charcoal-black background */
+  --bg-card: #18181b;         /* Rich elevated dark surface */
+  --bg-elevated: #222226;     /* Subtle lighter dark for inner boxes/rows */
+  --border-subtle: #2e2e34;   /* Understated classic hairline border */
+  --text-main: #f4f4f6;       /* Crisp off-white for primary reading */
+  --text-muted: #a1a1aa;      /* Classic silver-grey for secondary text */
+  --accent-white: #ffffff;    /* Pure white for classic high-contrast accents */
+}
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', Arial, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: var(--accent-white);
+  letter-spacing: 0.3px;
+}
+
+h2 {
+  border-bottom: 2px solid var(--accent-white);
+  display: inline-block;
+  padding-bottom: 6px;
+  margin-top: 0;
+}
+
+a {
+  color: var(--accent-white);
+  text-underline-offset: 4px;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+/* ---------- Hero / header ---------- */
+.hero {
+  background: linear-gradient(180deg, #09090b 0%, var(--bg-dark) 100%);
+  color: var(--accent-white);
+  text-align: center;
+  padding: 48px 20px 28px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.profile-photo {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  border: 3px solid var(--accent-white);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  background: var(--bg-card);
+}
+
+.hero h1 {
+  color: var(--accent-white);
+  font-size: 2.6rem;
+  margin: 16px 0 6px;
+}
+
+.tagline {
+  color: var(--text-muted);
+  margin: 0 0 24px;
+  font-size: 1.05rem;
+}
+
+.hero nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.hero nav a {
+  color: var(--text-main);
+  text-decoration: none;
+  padding: 7px 16px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
+}
+
+.hero nav a:hover {
+  background: var(--accent-white);
+  color: var(--bg-dark);
+  border-color: var(--accent-white);
+  opacity: 1;
+}
+
+/* ---------- Layout ---------- */
+main {
+  max-width: 860px;
+  margin: 36px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 28px 32px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.card h2 {
+  margin-bottom: 18px;
+}
+
+article {
+  margin-bottom: 20px;
+}
+
+article:last-child {
+  margin-bottom: 0;
+}
+
+article h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--accent-white);
+}
+
+.meta {
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 4px 0 8px;
+}
+
+ul {
+  padding-left: 20px;
+  margin: 0;
+  color: var(--text-main);
+}
+
+/* ---------- Projects (grid) ---------- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.project-grid article {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--accent-white);
+  padding: 18px;
+  border-radius: 8px;
+  margin: 0;
+}
+
+/* ---------- Skills table ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+th {
+  background: var(--bg-elevated);
+  color: var(--accent-white);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.6px;
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* ---------- Hobbies as tags ---------- */
+.tags {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tags li {
+  background: var(--bg-elevated);
+  color: var(--accent-white);
+  border: 1px solid var(--border-subtle);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background: #09090b;
+  color: var(--text-main);
+  text-align: center;
+  padding: 36px 20px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+footer h2 {
+  color: var(--accent-white);
+  border-bottom-color: var(--accent-white);
+}
+
+footer p {
+  margin: 6px 0;
+}
+
+footer a {
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--accent-white);
+  text-decoration: underline;
+  opacity: 1;
+}
+
+.copyright {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 20px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  table, th, td {
+    font-size: 0.9rem;
+  }
+}
