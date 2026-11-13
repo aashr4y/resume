@@ -1,30 +1,30 @@
 /* ==========================================================================
-   PREMIUM GREY GRADIENT & METALLIC PALETTE THEME
+   PURE MONOCHROME TITANIUM THEME (APPLE PRO / PORSCHE DESIGN)
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
 :root {
-  /* Core Grey & Slate Gradients */
-  --bg-gradient: linear-gradient(135deg, #0f1115 0%, #181b22 45%, #232731 100%);
-  --card-gradient: linear-gradient(145deg, rgba(38, 43, 54, 0.75) 0%, rgba(24, 27, 34, 0.88) 100%);
-  --header-gradient: linear-gradient(180deg, rgba(45, 51, 64, 0.5) 0%, rgba(24, 27, 34, 0.2) 100%);
+  /* Core Titanium & Obsidian Gradients */
+  --bg-gradient: linear-gradient(135deg, #0d0e11 0%, #16181d 50%, #22252a 100%);
+  --card-gradient: linear-gradient(155deg, rgba(38, 42, 49, 0.72) 0%, rgba(18, 20, 24, 0.88) 100%);
+  --header-gradient: linear-gradient(180deg, rgba(46, 51, 60, 0.45) 0%, rgba(18, 20, 24, 0.15) 100%);
   
-  /* Accent Palette (Warm Champagne & Cool Platinum) */
-  --accent-primary: #d4af37;       /* Warm Champagne Gold */
-  --accent-secondary: #e2e8f0;     /* Crisp Platinum Silver */
-  --accent-Soft: rgba(212, 175, 55, 0.14);
-  --accent-glow: rgba(212, 175, 55, 0.25);
+  /* Accent Palette (Pure White & Crisp Platinum) */
+  --accent-primary: #ffffff;         /* Pure White */
+  --accent-secondary: #e2e8f0;       /* Crisp Platinum Silver */
+  --accent-Soft: rgba(255, 255, 255, 0.10);
+  --accent-glow: rgba(255, 255, 255, 0.20);
 
   /* Typography Colours */
-  --text-primary: #f8fafc;         /* Alabaster White */
-  --text-secondary: #cbd5e1;       /* Soft Silver */
-  --text-muted: #94a3b8;           /* Muted Slate Grey */
+  --text-primary: #ffffff;           /* Alabaster White */
+  --text-secondary: #e2e8f0;         /* Soft Silver */
+  --text-muted: #94a3b8;             /* Brushed Gunmetal Grey */
 
   /* Borders & Shadows */
   --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-highlight: rgba(255, 255, 255, 0.18);
-  --shadow-elevated: 0 20px 40px -15px rgba(0, 0, 0, 0.65), 0 0 1px 1px rgba(255, 255, 255, 0.05);
+  --border-highlight: rgba(255, 255, 255, 0.22);
+  --shadow-elevated: 0 24px 48px -12px rgba(0, 0, 0, 0.75), 0 0 1px 1px rgba(255, 255, 255, 0.06);
 }
 
 * {
@@ -153,8 +153,8 @@ section:hover,
 .experience-item:hover, 
 .education-item:hover {
   transform: translateY(-2px);
-  border-color: rgba(212, 175, 55, 0.35);
-  box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.6);
 }
 
 /* Lists */
@@ -207,13 +207,13 @@ a {
 }
 
 a:hover {
-  color: #f3d478;
+  color: #ffffff;
   text-decoration: underline;
 }
 
 button, 
 .btn {
-  background: linear-gradient(135deg, #333947 0%, #1e222b 100%);
+  background: linear-gradient(135deg, #2a2d35 0%, #15171c 100%);
   color: var(--text-primary);
   border: 1px solid var(--border-highlight);
   padding: 0.6rem 1.25rem;
