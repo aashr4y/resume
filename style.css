@@ -1,259 +1,257 @@
-/* ---------- Palette (Subtle Dark, Black, White & Rich Classic Theme) ---------- */
+/* ==========================================================================
+   PURE MONOCHROME TITANIUM THEME
+   Deep Obsidian (#0d0e11) -> Brushed Gunmetal (#22252a)
+   Crisp Platinum (#e2e8f0) & Pure White (#ffffff)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
 :root {
-  --bg-dark: #0f0f11;         /* Deep charcoal-black background */
-  --bg-card: #18181b;         /* Rich elevated dark surface */
-  --bg-elevated: #222226;     /* Subtle lighter dark for inner boxes/rows */
-  --border-subtle: #2e2e34;   /* Understated classic hairline border */
-  --text-main: #f4f4f6;       /* Crisp off-white for primary reading */
-  --text-muted: #a1a1aa;      /* Classic silver-grey for secondary text */
-  --accent-white: #ffffff;    /* Pure white for classic high-contrast accents */
+  /* Core Titanium & Obsidian Gradients */
+  --bg-gradient: linear-gradient(135deg, #0d0e11 0%, #16181d 50%, #22252a 100%);
+  --card-gradient: linear-gradient(155deg, rgba(38, 42, 49, 0.72) 0%, rgba(18, 20, 24, 0.88) 100%);
+  --header-gradient: linear-gradient(180deg, rgba(46, 51, 60, 0.45) 0%, rgba(18, 20, 24, 0.15) 100%);
+
+  /* Monochrome Metallic Palette (Zero Gold) */
+  --accent-primary: #ffffff;         /* Pure White */
+  --accent-secondary: #e2e8f0;       /* Crisp Platinum */
+  --accent-soft: rgba(226, 232, 240, 0.12);
+  --accent-glow: rgba(255, 255, 255, 0.18);
+
+  /* Typography Colours */
+  --text-primary: #ffffff;           /* Pure White */
+  --text-secondary: #e2e8f0;         /* Crisp Platinum */
+  --text-muted: #94a3b8;             /* Brushed Steel Grey */
+
+  /* Borders & Elevations */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-highlight: rgba(226, 232, 240, 0.24);
+  --shadow-elevated: 0 24px 48px -12px rgba(0, 0, 0, 0.75), 0 0 1px 1px rgba(255, 255, 255, 0.06);
 }
 
-/* ---------- Base ---------- */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  font-family: 'Open Sans', Arial, sans-serif;
-  background: var(--bg-dark);
-  color: var(--text-main);
-  line-height: 1.6;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.65;
+  min-height: 100vh;
+  padding: 2.5rem 1.25rem;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 {
+/* Main Resume Container */
+.container,
+.resume-container,
+#resume,
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  background: var(--card-gradient);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border-subtle);
+  border-top: 1px solid var(--border-highlight);
+  border-radius: 16px;
+  box-shadow: var(--shadow-elevated);
+  padding: 3rem;
+}
+
+/* Header & Profile Area (Preserves your existing photo layout) */
+header,
+.header,
+.profile-header {
+  background: var(--header-gradient);
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+}
+
+/* Existing Photo Frame — Brushed Platinum Rim */
+img,
+.profile-pic,
+.profile-img,
+.avatar {
+  border-radius: 50%;
+  border: 2px solid var(--accent-secondary);
+  box-shadow: 0 0 28px var(--accent-glow);
+  object-fit: cover;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+img:hover,
+.profile-pic:hover,
+.profile-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 36px rgba(255, 255, 255, 0.28);
+}
+
+/* Typography & Titanium Gradient Headings */
+h1 {
   font-family: 'Playfair Display', Georgia, serif;
-  color: var(--accent-white);
-  letter-spacing: 0.3px;
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, #ffffff 0%, #e2e8f0 60%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.35rem;
 }
 
 h2 {
-  border-bottom: 2px solid var(--accent-white);
-  display: inline-block;
-  padding-bottom: 6px;
-  margin-top: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-primary);
+  margin: 2rem 0 1.1rem 0;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
+h3 {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+p, li {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.subtitle,
+.role,
+.date,
+.meta {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+/* Cards, Sections & Experience Blocks */
+section,
+.section,
+.card,
+.item,
+.experience-item,
+.education-item {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1.35rem 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+section:hover,
+.card:hover,
+.item:hover,
+.experience-item:hover,
+.education-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-highlight);
+  box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.65);
+}
+
+/* Lists */
+ul {
+  list-style-position: inside;
+  padding-left: 0.25rem;
+}
+
+li {
+  margin-bottom: 0.45rem;
+}
+
+li::marker {
+  color: var(--accent-secondary);
+}
+
+/* Skill Pills & Badges */
+.skill-tag,
+.badge,
+.pill,
+.skills span,
+.skills li {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  color: var(--accent-secondary);
+  border: 1px solid var(--border-highlight);
+  padding: 0.38rem 0.95rem;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 500;
+  margin: 0.25rem 0.35rem 0.25rem 0;
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover,
+.badge:hover,
+.pill:hover,
+.skills span:hover,
+.skills li:hover {
+  background: var(--accent-soft);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 14px var(--accent-glow);
+}
+
+/* Links & Buttons */
 a {
-  color: var(--accent-white);
-  text-underline-offset: 4px;
-  transition: opacity 0.2s ease;
+  color: var(--accent-secondary);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.3);
+  transition: all 0.2s ease;
 }
 
 a:hover {
-  opacity: 0.75;
+  color: var(--accent-primary);
+  border-bottom-color: var(--accent-primary);
 }
 
-/* ---------- Hero / header ---------- */
-.hero {
-  background: linear-gradient(180deg, #09090b 0%, var(--bg-dark) 100%);
-  color: var(--accent-white);
-  text-align: center;
-  padding: 48px 20px 28px;
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.profile-photo {
-  width: 170px;
-  height: 170px;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 50%;
-  border: 3px solid var(--accent-white);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-  background: var(--bg-card);
-}
-
-.hero h1 {
-  color: var(--accent-white);
-  font-size: 2.6rem;
-  margin: 16px 0 6px;
-}
-
-.tagline {
-  color: var(--text-muted);
-  margin: 0 0 24px;
-  font-size: 1.05rem;
-}
-
-.hero nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.hero nav a {
-  color: var(--text-main);
-  text-decoration: none;
-  padding: 7px 16px;
-  border: 1px solid var(--border-subtle);
-  background: var(--bg-card);
-  border-radius: 20px;
-  font-size: 0.9rem;
-  transition: all 0.25s ease;
-}
-
-.hero nav a:hover {
-  background: var(--accent-white);
-  color: var(--bg-dark);
-  border-color: var(--accent-white);
-  opacity: 1;
-}
-
-/* ---------- Layout ---------- */
-main {
-  max-width: 860px;
-  margin: 36px auto;
-  padding: 0 20px;
-}
-
-.card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: 12px;
-  padding: 28px 32px;
-  margin-bottom: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-}
-
-.card h2 {
-  margin-bottom: 18px;
-}
-
-article {
-  margin-bottom: 20px;
-}
-
-article:last-child {
-  margin-bottom: 0;
-}
-
-article h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: var(--accent-white);
-}
-
-.meta {
-  color: var(--text-muted);
-  font-style: italic;
-  margin: 4px 0 8px;
-}
-
-ul {
-  padding-left: 20px;
-  margin: 0;
-  color: var(--text-main);
-}
-
-/* ---------- Projects (grid) ---------- */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
-}
-
-.project-grid article {
-  background: var(--bg-elevated);
-  border: 1px solid var(--border-subtle);
-  border-left: 3px solid var(--accent-white);
-  padding: 18px;
+button,
+.btn {
+  background: linear-gradient(135deg, #2b3038 0%, #171a1f 100%);
+  color: var(--text-primary);
+  border: 1px solid var(--border-highlight);
+  padding: 0.6rem 1.25rem;
   border-radius: 8px;
-  margin: 0;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-/* ---------- Skills table ---------- */
-table {
-  width: 100%;
-  border-collapse: collapse;
+button:hover,
+.btn:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 18px var(--accent-glow);
 }
 
-th, td {
-  text-align: left;
-  padding: 12px 14px;
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-th {
-  background: var(--bg-elevated);
-  color: var(--accent-white);
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 0.6px;
-}
-
-tbody tr:nth-child(even) {
-  background: rgba(255, 255, 255, 0.02);
-}
-
-/* ---------- Hobbies as tags ---------- */
-.tags {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.tags li {
-  background: var(--bg-elevated);
-  color: var(--accent-white);
-  border: 1px solid var(--border-subtle);
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-/* ---------- Footer ---------- */
-footer {
-  background: #09090b;
-  color: var(--text-main);
-  text-align: center;
-  padding: 36px 20px;
-  border-top: 1px solid var(--border-subtle);
-}
-
-footer h2 {
-  color: var(--accent-white);
-  border-bottom-color: var(--accent-white);
-}
-
-footer p {
-  margin: 6px 0;
-}
-
-footer a {
-  color: var(--text-main);
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: var(--accent-white);
-  text-decoration: underline;
-  opacity: 1;
-}
-
-.copyright {
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  margin-top: 20px;
-}
-
-/* ---------- Responsive ---------- */
-@media (max-width: 600px) {
-  .hero h1 {
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  .container, .resume-container, #resume, main {
+    padding: 1.5rem;
+  }
+  h1 {
     font-size: 2rem;
-  }
-
-  .card {
-    padding: 20px;
-  }
-
-  table, th, td {
-    font-size: 0.9rem;
   }
 }
