@@ -1,115 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aashray Doshi | Resume</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aashray Doshi | Executive Resume & Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header class="hero">
-    <img class="profile-photo" id="photo" src="images/photo.png" alt="">
-    <h1 id="name"></h1>
-    <p class="tagline" id="tagline"></p>
-    <nav>
-      <a href="#summary">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#ventures">Ventures</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#hobbies">Hobbies</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <main class="resume-container">
+    
+    <!-- HEADER / PROFILE -->
+    <header class="profile-header">
+      <div class="header-avatar">
+        <img src="photo.png" alt="Aashray Doshi" class="profile-pic" width="130" height="130">
+      </div>
+      <div class="header-info">
+        <h1>Aashray Doshi</h1>
+        <p class="subtitle">Business, marketing and growth enthusiast | Entrepreneur</p>
+        
+        <!-- Navigation Menu (Slashes Removed) -->
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#ventures">Ventures</a>
+          <a href="#education">Education</a>
+          <a href="#skills">Skills</a>
+          <a href="#hobbies">Hobbies</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </header>
 
-  <main>
-    <section id="summary" class="card">
-      <h2>Summary</h2>
-      <p id="summary-text"></p>
+    <!-- PROFESSIONAL PROFILE -->
+    <section id="about">
+      <h2><span>⚡</span> Summary</h2>
+      <p>
+        I genuinely enjoy business, marketing, and growth-focused work. I like interacting with people, understanding how they think, and finding ways to improve conversions and sales. I have built and run my own businesses, learned sales through trust and referrals, and gained operational discipline through real work. I am looking to grow with a team that values customer understanding and practical execution.
+      </p>
     </section>
 
-    <section id="experience" class="card">
-      <h2>Experience</h2>
-      <div id="experience-list"></div>
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2><span>💼</span> Experience</h2>
+      
+      <div class="experience-item">
+        <h3>Influencer Manager & Digital Content Strategist</h3>
+        <p class="date">Nov 2026 – Present (6-Month Contract)</p>
+        <ul>
+          <li>Managing content strategy, growth analytics, and profile optimization for fitness creator Raj Baidya.</li>
+          <li>Directing brand deal negotiations, media kits, and sponsor communication.</li>
+          <li>Architecting UGC campaigns and sales conversion funnels to drive community growth.</li>
+        </ul>
+      </div>
     </section>
 
-    <section id="ventures" class="card">
-      <h2>Ventures and Projects</h2>
-      <div class="project-grid" id="ventures-list"></div>
+    <!-- EDUCATION (IIMB & HLCC Highlighted) -->
+    <section id="education">
+      <h2><span>🎓</span> Education</h2>
+
+      <div class="education-item">
+        <h3>BBA in Digital Business and Entrepreneurship</h3>
+        <p class="role highlight-institution">Indian Institute of Management Bangalore (IIMB)</p>
+      </div>
+
+      <div class="education-item">
+        <h3>Banking and Financial Services</h3>
+        <p class="role highlight-institution">H.L. College of Commerce (HLCC), Ahmedabad</p>
+      </div>
+
+      <div class="education-item">
+        <h3>Nirman High School (CBSE)</h3>
+        <ul>
+          <li>Class 12: 89.2%</li>
+          <li>Class 10: 77.8%</li>
+        </ul>
+      </div>
     </section>
 
-    <section id="education" class="card">
-      <h2>Education</h2>
-      <div id="education-list"></div>
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2><span>🛠️</span> Skills & Competencies</h2>
+      <div class="skills-container">
+        <span class="skill-tag">Digital Strategy</span>
+        <span class="skill-tag">Content Analytics</span>
+        <span class="skill-tag">Brand Negotiations</span>
+        <span class="skill-tag">Lead Conversion</span>
+        <span class="skill-tag">Capital Markets & ETFs</span>
+        <span class="skill-tag">HTML5 / CSS3 / Flexbox</span>
+        <span class="skill-tag">JavaScript (ES6+)</span>
+        <span class="skill-tag">Git & GitHub Pages</span>
+      </div>
     </section>
 
-    <section id="skills" class="card">
-      <h2>Skills</h2>
-      <table>
-        <thead><tr><th>Skill</th><th>Where I used it</th></tr></thead>
-        <tbody id="skills-list"></tbody>
-      </table>
+    <!-- EXTRACURRICULARS -->
+    <section id="hobbies">
+      <h2><span>🏆</span> Extracurriculars & Interests</h2>
+      
+      <div class="item">
+        <h3>Indian Classical Percussion (Tabla) — Level 3 (Praveshika Purna)</h3>
+        <p class="subtitle">Akhil Bharatiya Gandharva Mahavidyalaya Mandal (Trained via Saptak, Ahmedabad)</p>
+      </div>
+
+      <div class="item">
+        <h3>Athletics & Markets</h3>
+        <p class="subtitle">Devils Circuit obstacle finisher, 5–6 day resistance training, football, swimming, and active investor in equities, IPOs, and Tata Gold ETFs.</p>
+      </div>
     </section>
 
-    <section id="hobbies" class="card">
-      <h2>Hobbies and Extracurriculars</h2>
-      <ul class="tags" id="hobbies-list"></ul>
-    </section>
+    <!-- LET'S CONNECT (Properly Centered Footer Card) -->
+    <footer id="contact" class="connect-footer">
+      <h3>LET'S CONNECT</h3>
+      <p>Email: <a href="mailto:aashraydoshi27@gmail.com">aashraydoshi27@gmail.com</a></p>
+      <p>Institutional: <a href="mailto:aashray.doshi26@iimb.ac.in">aashray.doshi26@iimb.ac.in</a></p>
+      <p>Phone: +91 92653 27978</p>
+      <p>Instagram: <a href="https://instagram.com/aashr4y" target="_blank">@aashr4y</a></p>
+      <p class="copyright">© 2026 Aashray Doshi. All rights reserved.</p>
+    </footer>
+
   </main>
-
-  <footer id="contact">
-    <h2>Let's connect</h2>
-    <div id="contact-list"></div>
-    <p class="copyright" id="copyright"></p>
-  </footer>
-
-  <script src="content.js"></script>
-  <script>
-    const esc = (s) => s;
-
-    document.title = resume.name + " | Resume";
-    document.getElementById("photo").alt = "Portrait of " + resume.name;
-    document.getElementById("name").textContent = resume.name;
-    document.getElementById("tagline").textContent = resume.tagline;
-    document.getElementById("summary-text").textContent = resume.summary;
-
-    document.getElementById("experience-list").innerHTML = resume.experience.map(e => `
-      <article>
-        <h3>${e.title}</h3>
-        <p class="meta">${[e.org, e.dates].filter(Boolean).join(" | ")}</p>
-        ${e.points.length ? "<ul>" + e.points.map(p => `<li>${p}</li>`).join("") + "</ul>" : ""}
-      </article>`).join("");
-
-    document.getElementById("ventures-list").innerHTML = resume.ventures.map(v => `
-      <article>
-        <h3>${v.title}</h3>
-        <p class="meta">${v.meta}</p>
-        <p>${v.text}</p>
-      </article>`).join("");
-
-    document.getElementById("education-list").innerHTML = resume.education.map(e => `
-      <article>
-        <h3>${e.title}</h3>
-        ${e.org ? `<p class="meta">${e.org}</p>` : ""}
-        ${e.details.length ? "<ul>" + e.details.map(d => `<li>${d}</li>`).join("") + "</ul>" : ""}
-      </article>`).join("");
-
-    document.getElementById("skills-list").innerHTML = resume.skills.map(s => `
-      <tr><td>${s.skill}</td><td>${s.where}</td></tr>`).join("");
-
-    document.getElementById("hobbies-list").innerHTML = resume.hobbies.map(h => `<li>${h}</li>`).join("");
-
-    document.getElementById("contact-list").innerHTML =
-      resume.contact.emails.map(e => `<p><a href="mailto:${e}">${e}</a></p>`).join("") +
-      `<p><a href="tel:${resume.contact.phone}">${resume.contact.phoneDisplay}</a></p>` +
-      `<p><a href="https://instagram.com/${resume.contact.instagram}" target="_blank" rel="noopener">Instagram: @${resume.contact.instagram}</a></p>`;
-
-    document.getElementById("copyright").textContent = "© " + new Date().getFullYear() + " " + resume.name;
-  </script>
 
 </body>
 </html>
